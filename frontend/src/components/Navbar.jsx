@@ -1,5 +1,8 @@
+import useProduct from "../zustand/createZustand.js"
 
 function Navbar() {
+    const cart = useProduct().cart
+    
   return (
     <>
     <div id="navbar">
@@ -11,7 +14,7 @@ function Navbar() {
             <button className="shop">Shop</button>
             <button className="cart">
                 Cart
-                <div className="count-product">{0}</div>
+                <div className="count-product">{cart.length}</div>
             </button>
         </div>
     </div>
